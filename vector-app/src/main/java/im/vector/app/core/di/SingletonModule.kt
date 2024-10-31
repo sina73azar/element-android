@@ -146,7 +146,7 @@ import javax.inject.Singleton
             mdmService: MdmService,
     ): MatrixConfiguration {
         return MatrixConfiguration(
-                applicationFlavor = BuildConfig.FLAVOR_DESCRIPTION,
+                applicationFlavor = ""/*BuildConfig.FLAVOR_DESCRIPTION*/,
                 roomDisplayNameFallbackProvider = vectorRoomDisplayNameFallbackProvider,
                 threadMessagesEnabledDefault = vectorPreferences.areThreadMessagesEnabled(),
                 networkInterceptors = listOfNotNull(
@@ -226,8 +226,8 @@ import javax.inject.Singleton
             gitRevision = BuildConfig.GIT_REVISION,
             gitRevisionDate = BuildConfig.GIT_REVISION_DATE,
             gitBranchName = BuildConfig.GIT_BRANCH_NAME,
-            flavorDescription = BuildConfig.FLAVOR_DESCRIPTION,
-            flavorShortDescription = BuildConfig.SHORT_FLAVOR_DESCRIPTION,
+            flavorDescription = ""/*BuildConfig.FLAVOR_DESCRIPTION*/,
+            flavorShortDescription = ""/*BuildConfig.SHORT_FLAVOR_DESCRIPTION*/,
     )
 
     @Provides

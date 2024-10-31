@@ -1,23 +1,22 @@
 import com.android.build.OutputFile
 
+
 apply plugin: 'com.android.application'
 apply plugin: 'com.google.firebase.appdistribution'
 apply plugin: 'com.google.android.gms.oss-licenses-plugin'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-parcelize'
-apply plugin: 'kotlin-kapt'
+//apply plugin: 'kotlin-kapt'
 apply plugin: 'com.google.devtools.ksp'
 apply plugin: 'dagger.hilt.android.plugin'
 apply plugin: 'kotlinx-knit'
 apply plugin: 'com.likethesalad.stem'
 
-if (project.hasProperty("coverage")) {
-    apply plugin: 'jacoco'
-}
 
-kapt {
-    correctErrorTypes = true
-}
+
+//if (project.hasProperty("coverage")) {
+//    apply plugin: 'jacoco'
+//}
 
 knit {
     files = fileTree(project.rootDir) {
@@ -418,7 +417,7 @@ dependencies {
 
     // OSS License, gplay flavor only
     gplayImplementation 'com.google.android.gms:play-services-oss-licenses:17.1.0'
-    kapt libs.dagger.hiltCompiler
+    ksp libs.dagger.hiltCompiler
     ksp libs.airbnb.epoxyProcessor
 
     androidTestImplementation libs.androidx.testCore
