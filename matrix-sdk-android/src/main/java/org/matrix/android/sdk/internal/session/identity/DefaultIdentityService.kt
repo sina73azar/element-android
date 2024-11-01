@@ -25,6 +25,7 @@ import okhttp3.OkHttpClient
 import org.matrix.android.sdk.api.MatrixCoroutineDispatchers
 import org.matrix.android.sdk.api.auth.data.SessionParams
 import org.matrix.android.sdk.api.extensions.orFalse
+import org.matrix.android.sdk.api.extensions.orTrue
 import org.matrix.android.sdk.api.extensions.tryOrNull
 import org.matrix.android.sdk.api.failure.Failure
 import org.matrix.android.sdk.api.failure.MatrixError
@@ -229,7 +230,7 @@ internal class DefaultIdentityService @Inject constructor(
     }
 
     override fun getUserConsent(): Boolean {
-        return identityStore.getIdentityData()?.userConsent.orFalse()
+        return identityStore.getIdentityData()?.userConsent.orTrue()
     }
 
     override fun setUserConsent(newValue: Boolean) {
