@@ -47,7 +47,7 @@ class ContactsBookViewModel @AssistedInject constructor(
 
     init {
         loadContacts()
-
+//        handleUserConsentGranted()
         onEach(ContactsBookViewState::searchTerm, ContactsBookViewState::onlyBoundContacts) { _, _ ->
             updateFilteredMappedContacts()
         }
@@ -66,7 +66,7 @@ class ContactsBookViewModel @AssistedInject constructor(
             allContacts = contactsDataSource.getContacts(
                     withEmails = true,
                     // Do not handle phone numbers for the moment
-                    withMsisdn = false
+                    withMsisdn = true
             )
             mappedContacts = allContacts
 
