@@ -143,7 +143,7 @@ class ContactsDataSource @Inject constructor(
 
         return map
                 .values
-                .filter { it.emails.isNotEmpty() || it.msisdns.isNotEmpty() }
+                .filter { true/*it.emails.isNotEmpty()*/ /*|| it.msisdns.isNotEmpty()*/ }
                 .map { it.build() }
     }
 }
